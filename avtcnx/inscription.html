@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Stud Saveur</title>
+    <link rel="stylesheet" href="../style/petitDej.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="petitDej.html">Petit Déjeuner</a></li>
+                <li><a href="dejeuner.html">Déjeuner</a></li>
+                <li><a href="dessert.html">Desserts</a></li>
+                <li><a href="boisson.html">Boissons & Cocktails</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="conexion.html"><img src="../asset/user.png" alt="Authentification"></a>
+            <a href="#"><img src="../asset/note.png" alt="Inscription"></a>
+            <a href="panier.html"><img src="../asset/panier.png" alt="Panier"></a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Inscription</h2>
+        
+        <section class="inscription">
+            <form action="#" method="POST">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+
+                <label for="email">Adresse mail</label>
+                <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez un mot de passe" required>
+
+                <label for="confirm_password">Confirmation du mot de passe</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe" required>
+
+                <label for="rue">Rue</label>
+                <input type="text" id="rue" name="rue" placeholder="Nom et numéro de rue" required>
+
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" placeholder="Entrez votre ville" required>
+
+                <label for="code_postal">Code Postal</label>
+                <input type="text" id="code_postal" name="code_postal" placeholder="Ex : 75000" required>
+
+             
+                
+                <button type="submit" class="disc">S'inscrire</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Stud Saveur. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
