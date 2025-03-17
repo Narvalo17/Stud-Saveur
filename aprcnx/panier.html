@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stud Saveur - Panier</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <style>
+        .cart-items {
+            display: flex;
+            justify-content: flex-start; /* Align items to the start of the row */
+            flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+        }
+        .cart-item {
+            display: flex;
+            flex-direction: column; /* Stack image and text vertically */
+            align-items: center; /* Center items horizontally */
+            margin: 10px; /* Space between items */
+            width: 150px; /* Fixed width for each item */
+        }
+        .cart-item img {
+            width: 100px; /* Fixed width */
+            height: 100px; /* Fixed height for uniformity */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            margin-bottom: 5px; /* Space between image and text */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="./petitDej.html">Petit Déjeuner</a></li>
+                <li><a href="./dejeuner.html">Déjeuner</a></li>
+                <li><a href="./dessert.html">Desserts</a></li>
+                <li><a href="./boisson.html">Boissons & Cocktails</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="./conexion.html"><img src="../asset/user.png" alt="Authentification" class="icon"></a>
+            <a href="./inscription.html"><img src="../asset/note.png" alt="Inscription" class="icon"></a>
+            <a href="./panier.html"><img src="../asset/panier.png" alt="Panier" class="icon"></a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Votre Panier</h2>
+        <img src="../asset/panier.png" alt="Panier" style="width: 50%; height: auto;">
+        <section>
+            <h3>Articles dans votre panier</h3>
+            <div class="cart-items" id="cart-items">
+                <div class="cart-item">
+                    <img src="../asset/1.JPG" alt="Article 1">
+                    <p>Article 1</p>
+                    <p>Prix: 10€</p>
+                    <button class="remove-button">Retirer</button>
+                </div>
+                <div class="cart-item">
+                    <img src="../asset/2.JPG" alt="Article 2">
+                    <p>Article 2</p>
+                    <p>Prix: 15€</p>
+                    <button class="remove-button">Retirer</button>
+                </div>
+                <div class="cart-item">
+                    <img src="../asset/3.jpg" alt="Article 3">
+                    <p>Article 3</p>
+                    <p>Prix: 12€</p>
+                    <button class="remove-button">Retirer</button>
+                </div>
+                <div class="cart-item">
+                    <img src="../asset/4.jpg" alt="Article 4">
+                    <p>Article 4</p>
+                    <p>Prix: 8€</p>
+                    <button class="remove-button">Retirer</button>
+                </div>
+                <div class="cart-item">
+                    <img src="../asset/5.jpg" alt="Article 5">
+                    <p>Article 5</p>
+                    <p>Prix: 20€</p>
+                    <button class="remove-button">Retirer</button>
+                </div>
+                <div class="cart-item">
+                    <img src="../asset/6.jpg" alt="Article 6">
+                    <p>Article 6</p>
+                    <p>Prix: 5€</p>
+                    <button class="remove-button">Retirer</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Total: 70€</h3>
+            <button>Valider la commande</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script>
+        const removeButtons = document.querySelectorAll('.remove-button');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const cartItem = this.parentElement; // Get the parent cart item
+                cartItem.remove(); // Remove the item from the cart
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boissons - Stud Saveur</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #f8f8f8;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .card {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../avtcnx/petitDej.html">Petit Déjeuner</a></li>
+                <li><a href="../avtcnx/dejeuner.html">Déjeuner</a></li>
+                <li><a href="../avtcnx/dessert.html">Desserts</a></li>
+                <li><a href="#">Boissons & Cocktails</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="../avtcnx/conexion.html"><img src="../asset/user.png" alt="Authentification" class="icon"></a>
+            <a href="../avtcnx/inscription.html"><img src="../asset/note.png" alt="Inscription" class="icon"></a>
+            <a href="../avtcnx/panier.html"><img src="../asset/panier.png" alt="Panier" class="icon"></a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Découvrez nos boissons et cocktails</h2>
+<section>
+    <h3>Voici Nos Boissons Chaudes</h3>
+    <div class="card">
+        <img src="../asset/Café.png" alt="Café" style="width: 100%; height: auto;">
+        <p>Café</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Café')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+    <div class="card">
+        <img src="../asset/Thé.png" alt="Thé" style="width: 100%; height: auto;">
+        <p>Thé</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Thé')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+</section>
+
+<section>
+    <h3>Voici Nos Boissons Froides</h3>
+    <div class="card">
+        <img src="../asset/JusOrange.png" alt="Jus d'orange" style="width: 100%; height: auto;">
+        <p>Jus d'orange</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Jus d\'orange')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+    <div class="card">
+        <img src="../asset/Soda.png" alt="Soda" style="width: 100%; height: auto;">
+        <p>Soda</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Soda')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+    <div class="card">
+        <img src="../asset/EauMinerale.png" alt="Eau minérale" style="width: 100%; height: auto;">
+        <p>Eau minérale</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Eau minérale')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+</section>
+
+<section>
+    <h3>Voici Nos Boissons Alcoolisé</s></h3>
+    <div class="card">
+        <img src="../asset/VinRouge.png" alt="Vin rouge" style="width: 100%; height: auto;">
+        <p>Vin rouge</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Vin rouge')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+    <div class="card">
+        <img src="../asset/VinBlanc.png" alt="Vin blanc" style="width: 100%; height: auto;">
+        <p>Vin blanc</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Vin blanc')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+    <div class="card">
+        <img src="../asset/Champagne.png" alt="Champagne" style="width: 100%; height: auto;">
+        <p>Champagne</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Champagne')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+</section>
+
+<section>
+    <h3>Voici Nos Cocktails</h3>
+    <div class="card">
+        <img src="../asset/CocktailFruits.png" alt="Cocktail de fruits" style="width: 100%; height: auto;">
+        <p>Cocktail de fruits</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Cocktail de fruits')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+    <div class="card">
+        <img src="../asset/Smoothie.png" alt="Smoothie" style="width: 100%; height: auto;">
+        <p>Smoothie</p>
+        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+        <button class="add-button" onclick="addToCart('Smoothie')">
+            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+            Ajouter au Panier
+        </button>
+    </div>
+</section>
+
+    </main>
+    
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script>
+        function addToCart(itemName) {
+            const quantityInput = event.target.previousElementSibling; // Get the quantity input
+            const quantity = quantityInput.value; // Get the quantity value
+
+            // Create a new cart item element
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <p>${itemName} - Quantité: ${quantity}</p>
+                <button class="remove-button">Retirer</button>
+            `;
+
+            // Append the new item to the cart
+            document.getElementById('cart-items').appendChild(cartItem);
+
+            // Add functionality to the "Retirer" button
+            const removeButton = cartItem.querySelector('.remove-button');
+            removeButton.addEventListener('click', function() {
+                cartItem.remove(); // Remove the item from the cart
+            });
+
+            alert(quantity + ' x ' + itemName + ' a été ajouté au panier!');
+        }
+    </script>
+</body>
+</html>
