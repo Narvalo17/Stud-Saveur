@@ -236,7 +236,62 @@ section div a img {
     background: #c8c8c8bb;
     
 }
+.hidden {
+    display: none;
+}
 
+.a, .b, .c  {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 20px 30px 20px; 
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, max-height 0.5s ease-in-out;
+    max-height: 460px; 
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- Empêcher la carte de trop s’agrandir dès le départ --- */
+.a:not(.open), .b:not(.open), .c:not(.open) {
+    max-height: 460px; /* Ajuste selon la hauteur initiale */
+}
+
+/* --- Quand une carte est ouverte, elle peut s'ajuster en hauteur --- */
+.a.open, .b.open, .c.open {
+    max-height: 800px; /* Ajuste cette valeur pour éviter que ça soit coupé */
+}
+
+/* --- Assurer que la description soit bien visible et se ferme sans bug --- */
+.description {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* --- Affichage fluide de la description lors de l'ouverture --- */
+.description.visible {
+    display: block;
+    opacity: 1;
+    max-height: 500px; /* Ajuste selon le contenu */
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* --- Assurer une fermeture propre sans bug --- */
+.a:not(.open) .description,
+.b:not(.open) .description,
+.c:not(.open) .description {
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
 footer {
     background: #222;
