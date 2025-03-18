@@ -19,8 +19,8 @@
             width: 150px; /* Fixed width for each item */
         }
         .cart-item img {
-            width: 100px; /* Fixed width */
-            height: 100px; /* Fixed height for uniformity */
+            width: 80px; /* Fixed width */
+            height: 80px; /* Fixed height for uniformity */
             object-fit: cover; /* Ensures the image covers the area without distortion */
             margin-bottom: 5px; /* Space between image and text */
         }
@@ -46,50 +46,14 @@
     
     <main>
         <h2>Votre Panier</h2>
-        <img src="../asset/panier.png" alt="Panier" style="width: 50%; height: auto;">
+        <img src="../asset/panier.png" alt="Panier" style="width: 30%; height: auto;">
         <section>
             <h3>Articles dans votre panier</h3>
             <div class="cart-items" id="cart-items">
-                <div class="cart-item">
-                    <img src="../asset/1.JPG" alt="Article 1">
-                    <p>Article 1</p>
-                    <p>Prix: 10€</p>
-                    <button class="remove-button">Retirer</button>
-                </div>
-                <div class="cart-item">
-                    <img src="../asset/2.JPG" alt="Article 2">
-                    <p>Article 2</p>
-                    <p>Prix: 15€</p>
-                    <button class="remove-button">Retirer</button>
-                </div>
-                <div class="cart-item">
-                    <img src="../asset/3.jpg" alt="Article 3">
-                    <p>Article 3</p>
-                    <p>Prix: 12€</p>
-                    <button class="remove-button">Retirer</button>
-                </div>
-                <div class="cart-item">
-                    <img src="../asset/4.jpg" alt="Article 4">
-                    <p>Article 4</p>
-                    <p>Prix: 8€</p>
-                    <button class="remove-button">Retirer</button>
-                </div>
-                <div class="cart-item">
-                    <img src="../asset/5.jpg" alt="Article 5">
-                    <p>Article 5</p>
-                    <p>Prix: 20€</p>
-                    <button class="remove-button">Retirer</button>
-                </div>
-                <div class="cart-item">
-                    <img src="../asset/6.jpg" alt="Article 6">
-                    <p>Article 6</p>
-                    <p>Prix: 5€</p>
-                    <button class="remove-button">Retirer</button>
-                </div>
+                <!-- Cart items will be dynamically generated here -->
             </div>
         </section>
         <section>
-            <h3>Total: 70€</h3>
             <button>Valider la commande</button>
         </section>
     </main>
@@ -99,13 +63,57 @@
     </footer>
 
     <script>
-        const removeButtons = document.querySelectorAll('.remove-button');
-        removeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cartItem = this.parentElement; // Get the parent cart item
-                cartItem.remove(); // Remove the item from the cart
-            });
-        });
+        // Retrieve the cart items from local storage
+        const cart = JSON.parse(localStorage.getItem('cart')) || {}; // Retrieve the cart items from local storage
+        const cartItemsContainer = document.getElementById('cart-items');
+        let total = 0;
+
+        // Loop through the cart items and display them
+        for (const item in cart) { // Loop through the cart items and display them
+            const quantity = cart[item];
+            const price = getPrice(item); // Function to get the price of the item
+            total += price * quantity;
+
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <img src="../asset/${item}.jpg" alt="${item}">
+                <p>${item}</p>
+                <p>${item}</p>
+                <p>Prix: ${price}€</p>
+                <p>Prix: ${price}€</p>
+                <p>Quantité: ${quantity}</p>
+                <button class="remove-button" onclick="removeFromCart('${item}')">Retirer</button>
+                <button class="remove-button" onclick="removeFromCart('${item}')">Retirer</button>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        }
+
+        // Display total price
+        document.querySelector('h3').innerText = `Total: ${total}€`;
+
+        function removeFromCart(itemName) {
+            delete cart[itemName];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload(); // Reload the page to update the cart display
+        }
+
+        function getPrice(itemName) { // Function to get the price of the item
+            // Define prices for each item
+            const prices = {
+                'Café': 10,
+                'Thé': 8,
+                'Jus d\'orange': 5,
+                'Soda': 3,
+                'Eau minérale': 2,
+                'Vin rouge': 15,
+                'Vin blanc': 12,
+                'Champagne': 20,
+                'Cocktail de fruits': 10,
+                'Smoothie': 7
+            };
+            return prices[itemName] || 0; // Return 0 if item not found
+        }
     </script>
 </body>
 </html>

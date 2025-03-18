@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déjeuner - Stud Saveur</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #f8f8f8;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .card {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../aprcnx/petitDej.html">Petit Déjeuner</a></li>
+                <li><a href="#">Déjeuner</a></li>
+                <li><a href="../aprcnx/dessert.html">Desserts</a></li>
+                <li><a href="../aprcnx/boisson.html">Boissons & Cocktails</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Découvrez nos plats de Déjeuner</h2>
+        <section>
+            <h3>Voici Nos Plats</h3>
+            <div class="card">
+                <img src="../asset/plat1.jpg" alt="Plat 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Plat 1</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Plat 1')">Ajouter au Panier</button>
+            </div>
+            <div class="card">
+                <img src="../asset/plat2.jpg" alt="Plat 2" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Plat 2</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Plat 2')">Ajouter au Panier</button>
+            </div>
+            <div class="card">
+                <img src="../asset/plat3.jpg" alt="Plat 3" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Plat 3</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Plat 3')">Ajouter au Panier</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script>
+        function addToCart(itemName) {
+            const quantityInput = event.target.previousElementSibling; // Get the quantity input
+            const quantity = quantityInput.value; // Get the quantity value
+            alert(quantity + ' x ' + itemName + ' a été ajouté au panier!');
+        }
+    </script>
+</body>
+</html>

@@ -3,153 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stud Saveur - Petit Déjeuner</title>
-    <link rel="stylesheet" href="/style/petitDej.css">
+    <title>Desserts - Stud Saveur</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #f8f8f8;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .card {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="../index.html">Accueil</a></li>
-                <li><a href="petitDej.html">Petit Déjeuner</a></li>
-                <li><a href="dejeuner.html">Déjeuner</a></li>
+                <li><a href="../aprcnx/petitDej.html">Petit Déjeuner</a></li>
+                <li><a href="../aprcnx/dejeuner.html">Déjeuner</a></li>
                 <li><a href="#">Desserts</a></li>
-                <li><a href="boisson.html">Boissons & Cocktails</a></li>
+                <li><a href="../aprcnx/boisson.html">Boissons & Cocktails</a></li>
             </ul>
         </nav>
-        <div class="nav-right">
-            <a href="conexion.html"><img src="../asset/user.png" alt="Authentification" class="icon"></a>
-            <a href="inscription.html"><img src="../asset/note.png" alt="Inscription" class="icon"></a>
-            <a href="panier.html"><img src="../asset/panier.png" alt="Panier" class="icon"></a>
-        </div>
     </header>
     
     <main>
-        <h2>Déjeuner</h2>
-        
-        <section class="container">
-            <h3>Bon App</h3>
-            <img src="../asset/nourriture.png" alt="panier">
-            <p></p>
-            <button class="discover">Découvrir</button>
-        </section>
-        
+        <h2>Découvrez nos Desserts</h2>
         <section>
-            <div>
-                <img src="" alt="">
-               <p> <strong></strong></p> 
-                    <p>
-                </p>
-                <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <h3>Voici Nos Desserts</h3>
+            <div class="card">
+                <img src="../asset/OIP 1.jpeg" alt="Dessert 1" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 1</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 1')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                <p>
-                </p>
-                <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/OIP.jpeg" alt="Dessert 2" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 2</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 2')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-            
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/OIP 8.jpeg" alt="Dessert 3" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 3</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 3')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                   
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/OIP 7.jpeg" alt="Dessert 4" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 4</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 4')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                  
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/OIP 3.jpeg" alt="Dessert 5" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 5</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 5')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                   
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/OIP2.jpeg" alt="Dessert 6" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 6</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 6')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/dessert6.jpeg" alt="Dessert 7" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 7</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 7')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/dessert3.jpeg" alt="Dessert 8" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 8</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 8')">Ajouter au Panier</button>
             </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                   
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                   
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
-            </div>
-            <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
-            </div> <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
-            </div> <div>
-                <img src="" alt="">
-                <p><strong></strong></p>
-                   <p>
-                    
-                   </p> 
-                   <a href="#"><img src="../asset/panier2.png" alt="Panier2"></a>
+            <div class="card">
+                <img src="../asset/Dessert.png" alt="Dessert 9" style="width: 200px; height: 200px; object-fit: cover;">
+                <p>Dessert 9</p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Dessert 9')">Ajouter au Panier</button>
             </div>
         </section>
     </main>
@@ -157,6 +120,13 @@
     <footer>
         <p>Footer</p>
     </footer>
-    <script src="../js/petitDej.js"></script>
+
+    <script>
+        function addToCart(itemName) {
+            const quantityInput = event.target.previousElementSibling; // Get the quantity input
+            const quantity = quantityInput.value; // Get the quantity value
+            alert(quantity + ' x ' + itemName + ' a été ajouté au panier!');
+        }
+    </script>
 </body>
 </html>

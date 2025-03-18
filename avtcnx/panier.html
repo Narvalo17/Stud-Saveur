@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stud Saveur - Panier</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <style>
+        .cart-items {
+            display: flex;
+            justify-content: flex-start; /* Align items to the start of the row */
+            flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+        }
+        .cart-item {
+            display: flex;
+            flex-direction: column; /* Stack image and text vertically */
+            align-items: center; /* Center items horizontally */
+            margin: 10px; /* Space between items */
+            width: 150px; /* Fixed width for each item */
+        }
+        .cart-item img {
+            width: 80px; /* Fixed width */
+            height: 80px; /* Fixed height for uniformity */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            margin-bottom: 5px; /* Space between image and text */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="./petitDej.html">Petit Déjeuner</a></li>
+                <li><a href="./dejeuner.html">Déjeuner</a></li>
+                <li><a href="./dessert.html">Desserts</a></li>
+                <li><a href="./boisson.html">Boissons & Cocktails</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="./conexion.html"><img src="../asset/user.png" alt="Authentification" class="icon"></a>
+            <a href="./inscription.html"><img src="../asset/note.png" alt="Inscription" class="icon"></a>
+            <a href="./panier.html"><img src="../asset/panier.png" alt="Panier" class="icon"></a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Votre Panier</h2>
+        <img src="../asset/panier.png" alt="Panier" style="width: 30%; height: auto;">
+        <section>
+            <h3>Articles dans votre panier</h3>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically generated here -->
+            </div>
+            </div>
+        </section>
+        <section>
+            <button>Valider la commande</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+    <script>
+        // Retrieve the cart items from local storage
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        const cartItemsContainer = document.getElementById('cart-items');
+        let total = 0;
+
+        // Loop through the cart items and display them
+        for (const item in cart) {
+            const quantity = cart[item];
+            const price = getPrice(item); // Function to get the price of the item
+            total += price * quantity;
+
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <img src="../asset/${item}.jpg" alt="${item}">
+                <p>${item}</p>
+                <p>Prix: ${price}€</p>
+                <p>Quantité: ${quantity}</p>
+                <button class="remove-button" onclick="removeFromCart('${item}')">Retirer</button>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        }
+
+        // Display total price
+        document.querySelector('h3').innerText = `Total: ${total}€`;
+
+        function removeFromCart(itemName) {
+            delete cart[itemName];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload(); // Reload the page to update the cart display
+        }
+
+        function getPrice(itemName) {
+            // Define prices for each item
+            const prices = {
+                'Café': 10,
+                'Thé': 8,
+                'Jus d\'orange': 5,
+                'Soda': 3,
+                'Eau minérale': 2,
+                'Vin rouge': 15,
+                'Vin blanc': 12,
+                'Champagne': 20,
+                'Cocktail de fruits': 10,
+                'Smoothie': 7
+            };
+            return prices[itemName] || 0; // Return 0 if item not found
+        }
+    </script>
+</body>
+</html>

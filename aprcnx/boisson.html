@@ -41,6 +41,17 @@
             padding: 10px;
             background: #f8f8f8;
         }
+        /* New CSS for horizontal alignment */
+        .drink-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        /* Updated text color and weight */
+        h2, h3, p {
+            color: black; /* Set text color to black */
+            font-weight: bold; /* Make text bold */
+        }
     </style>
 </head>
 <body>
@@ -63,111 +74,140 @@
     
     <main>
         <h2>Découvrez nos boissons et cocktails</h2>
-<section>
-    <h3>Voici Nos Boissons Chaudes</h3>
-    <div class="card">
-        <img src="../asset/café.jpg" alt="Café" style="width: 100%; height: auto;">
-        <p>Café</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Café')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-    <div class="card">
-        <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
-        <p>Thé</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Thé')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-</section>
+        <section class="container">
+            <h3>Un voyage sensoriel à travers des saveurs uniques et rafraîchissantes.</h3>
+            <img src="../asset/téléchargement.jpeg" alt="panier" style="width: 300px; height: auto;">
+            <p class="description" style="display: none;">Découvrez notre sélection de boissons rafraîchissantes et savoureuses, soigneusement élaborées pour satisfaire toutes vos envies.
+                Qu'il s'agisse d'une boisson pétillante aux arômes exquis, d'un jus de fruits naturel débordant de fraîcheur, ou d'un thé réconfortant qui apaise l'âme, nous avons de quoi émerveiller vos papilles. Pour les amateurs de café, dégustez nos créations, de l'expresso intense aux cappuccinos onctueux. Et pour une touche festive, laissez-vous séduire par nos cocktails artisanaux, parfaits pour chaque occasion.</p>
+            <button class="discover" onclick="toggleDescription()">Découvrir</button>
+        </section>
 
-<section>
-    <h3>Voici Nos Boissons Froides</h3>
-    <div class="card">
-        <img src="../asset/or.png" alt="Jus d'orange" style="width: 100%; height: auto;">
-        <p>Jus d'orange</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Jus d\'orange')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-    <div class="card">
-        <img src="../asset/sod.png" alt="Soda" style="width: 100%; height: auto;">
-        <p>Soda</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Soda')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-    <div class="card">
-        <img src="../asset/eau.jpeg" alt="Eau minérale" style="width: 100%; height: auto;">
-        <p>Eau minérale</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Eau minérale')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-</section>
+        <section>
+            <h3>Voici Nos Boissons Chaudes</h3>
+            <div class="drink-section">
+                <div class="a">
+                    <img src="../asset/café.jpg" alt="Café" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Café</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Café', '../asset/café.jpg')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+                <div class="b">
+                    <img src="../asset/the.png" alt="Thé" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Thé</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Thé', '../asset/the.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+            </div>
+        </section>
 
-<section>
-    <h3>Voici Nos Boissons Alcoolisé</s></h3>
-    <div class="card">
-        <img src="../asset/vr.png" alt="Vin rouge" style="width: 100%; height: auto;">
-        <p>Vin rouge</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Vin rouge')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-    <div class="card">
-        <img src="../asset/vb.png" alt="Vin blanc" style="width: 100%; height: auto;">
-        <p>Vin blanc</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Vin blanc')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-    <div class="card">
-        <img src="../asset/ch.jpeg" alt="Champagne" style="width: 100%; height: auto;">
-        <p>Champagne</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Champagne')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-</section>
+        <section>
+            <h3>Voici Nos Boissons Froides</h3>
+            <div class="drink-section">
+                <div class="c">
+                    <img src="../asset/or.png" alt="Jus d'orange" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Jus d'orange</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Jus d\'orange', '../asset/or.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+                <div class="d">
+                    <img src="../asset/sod.png" alt="Soda" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Soda</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Soda', '../asset/sod.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+                <div class="e">
+                    <img src="../asset/eau.jpeg" alt="Eau minérale" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Eau minérale</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Eau minérale', '../asset/eau.jpeg')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+            </div>
+        </section>
 
-<section>
-    <h3>Voici Nos Cocktails</h3>
-    <div class="card">
-        <img src="../asset/cf - Copie.png" alt="Cocktail de fruits" style="width: 100%; height: auto;">
-        <p>Cocktail de fruits</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Cocktail de fruits')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-    <div class="card">
-        <img src="../asset/sm - Copie.png" alt="Smoothie" style="width: 100%; height: auto;">
-        <p>Smoothie</p>
-        <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-        <button class="add-button" onclick="addToCart('Smoothie')">
-            <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
-            Ajouter au Panier
-        </button>
-    </div>
-</section>
+        <section>
+            <h3>Voici Nos Boissons Alcoolisé</h3>
+            <div class="drink-section">
+                <div class="f">
+                    <img src="../asset/vr.png" alt="Vin rouge" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Vin rouge</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Vin rouge', '../asset/vr.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+                <div class="i">
+                    <img src="../asset/vb.png" alt="Vin blanc" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Vin blanc</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Vin blanc', '../asset/vb.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+                <div class="g">
+                    <img src="../asset/ch.jpeg" alt="Champagne" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Champagne</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Champagne', '../asset/ch.jpeg')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Voici Nos Cocktails</h3>
+            <div class="drink-section">
+                <div class="k">
+                    <img src="../asset/cf - Copie.png" alt="Cocktail de fruits" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Cocktail de fruits</p>
+                    <p class="description" style="display: none;">Le plaisir gourmand en format pratique.
+                        Sains et goûteux, ils permettent toutes les extravagances, à l’apéro ou pour le goûter, lors d’un brunch ou un pique-nique. Laissez libre cours à votre imagination ou suivez nos meilleures recettes. Prêts, feu, cocktails ! 
+                    </p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Cocktail de fruits', '../asset/cf - Copie.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+                <div class="l">
+                    <img src="../asset/sm - Copie.png" alt="Smoothie" style="width: 200px; height: 200px; object-fit: cover;">
+                    <p>Smoothie</p>
+                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                    <button class="add-button" onclick="addToCart('Smoothie', '../asset/sm - Copie.png')">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;">
+                        Ajouter au Panier
+                    </button>
+                </div>
+            </div>
+        </section>
 
     </main>
     
@@ -176,29 +216,31 @@
     </footer>
 
     <script>
-        function addToCart(itemName) {
-            const quantityInput = event.target.previousElementSibling; // Get the quantity input
-            const quantity = quantityInput.value; // Get the quantity value
-
-            // Create a new cart item element
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
-                <p>${itemName} - Quantité: ${quantity}</p>
-                <button class="remove-button">Retirer</button>
-            `;
-
-            // Append the new item to the cart
-            document.getElementById('cart-items').appendChild(cartItem);
-
-            // Add functionality to the "Retirer" button
-            const removeButton = cartItem.querySelector('.remove-button');
-            removeButton.addEventListener('click', function() {
-                cartItem.remove(); // Remove the item from the cart
-            });
-
-            alert(quantity + ' x ' + itemName + ' a été ajouté au panier!');
+        function toggleDescription() {
+            const description = document.querySelector('.description');
+            description.style.display = description.style.display === 'none' ? 'block' : 'none';
         }
+function addToCart(itemName) {
+    const quantityInput = event.target.previousElementSibling; // Get the quantity input
+    const quantity = parseInt(quantityInput.value); // Get the quantity value
+    
+    // Retrieve the cart from local storage or initialize it
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    
+    // Update the cart with the new item and quantity
+    if (cart[itemName]) {
+        cart[itemName] += quantity; // Increment quantity if item already exists
+    } else {
+        cart[itemName] = quantity; // Add new item
+    }
+    
+    // Save the updated cart back to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(quantity + ' x ' + itemName + ' a été ajouté au panier!');
+}
+
     </script>
+    <script src="../js/boissons.js"></script>
+
 </body>
 </html>
