@@ -54,7 +54,7 @@
             </div>
         </section>
         <section>
-            <button>Valider la commande</button>
+            <button onclick="validateOrder()">Valider la commande</button>
         </section>
     </main>
     
@@ -65,6 +65,12 @@
     <script>
         // Retrieve the cart items from local storage
         const cart = JSON.parse(localStorage.getItem('cart')) || {}; // Retrieve the cart items from local storage
+
+// Remove 'jus d\'orange' from the cart if it exists
+if (cart['Jus d\'orange']) {
+    delete cart['Jus d\'orange'];
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
         const cartItemsContainer = document.getElementById('cart-items');
         let total = 0;
 
@@ -77,13 +83,10 @@
             const cartItem = document.createElement('div');
             cartItem.className = 'cart-item';
             cartItem.innerHTML = `
-                <img src="../asset/${item}.jpg" alt="${item}">
+                <img src="../asset/${item}.png" alt="${item}">
                 <p>${item}</p>
-                <p>${item}</p>
-                <p>Prix: ${price}€</p>
                 <p>Prix: ${price}€</p>
                 <p>Quantité: ${quantity}</p>
-                <button class="remove-button" onclick="removeFromCart('${item}')">Retirer</button>
                 <button class="remove-button" onclick="removeFromCart('${item}')">Retirer</button>
             `;
             cartItemsContainer.appendChild(cartItem);
@@ -101,8 +104,8 @@
         function getPrice(itemName) { // Function to get the price of the item
             // Define prices for each item
             const prices = {
-                'Café': 10,
-                'Thé': 8,
+                'Café': 2.50,
+                'Thé': 2.00,
                 'Jus d\'orange': 5,
                 'Soda': 3,
                 'Eau minérale': 2,
@@ -113,6 +116,11 @@
                 'Smoothie': 7
             };
             return prices[itemName] || 0; // Return 0 if item not found
+        }
+
+        function validateOrder() {
+            // Logic to validate the order can be added here
+            alert("Commande validée !");
         }
     </script>
 </body>
