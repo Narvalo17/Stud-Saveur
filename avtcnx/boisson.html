@@ -198,7 +198,7 @@
             const description = document.querySelector('.description');
             description.style.display = description.style.display === 'none' ? 'block' : 'none';
         }
-        function addToCart(itemName) {
+        function addToCart(itemName, itemImage, itemPrice) {
             const quantityInput = event.target.previousElementSibling; // Get the quantity input
             const quantity = parseInt(quantityInput.value); // Get the quantity value
 
@@ -212,6 +212,11 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || {};
 
             // Update the cart with the new item and quantity
+    const itemDetails = {
+        image: itemImage,
+        price: itemPrice,
+        quantity: quantity
+    };
             if (cart[itemName]) {
                 cart[itemName] += quantity; // Increment quantity if item already exists
             } else {
@@ -220,7 +225,7 @@
 
             // Save the updated cart back to local storage
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(quantity + ' x ' + itemName + ' a été ajouté au panier!');
+            alert(quantity + ' x ' + itemName + ' a été ajouté au panier avec succès!');
         }
     </script>
     <script src="../js/boissons.js"></script>
