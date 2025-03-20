@@ -10,9 +10,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #1c1c1c;
         }
         header {
-            background: #f8f8f8;
+            background: #5353536e;
             padding: 10px;
         }
         nav ul {
@@ -23,36 +24,56 @@
             display: inline;
             margin-right: 15px;
         }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .category-buttons {
+            margin-bottom: 20px;
+        }
+        .category-button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #808080; /* Gray */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .category-button:hover {
+            background-color: #696969; /* Darker gray on hover */
+        }
+        .drink-section {
+            display: none; /* Hide all sections by default */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
         .card {
-            display: inline-block;
-            width: 30%;
-            margin: 10px;
+            background: #2c2c2c6a;
             border: 1px solid #ccc;
             border-radius: 5px;
             text-align: center;
             padding: 10px;
+            margin: 10px;
+            width: 30%;
             transition: transform 0.2s;
         }
         .card:hover {
             transform: scale(1.05);
         }
+        h2, h3 {
+            color: #fff;
+        }
+        .price {
+            color: #333;
+            font-size: 1.2em;
+        }
         footer {
             text-align: center;
             padding: 10px;
-            background: #f8f8f8;
-        }
-        .drink-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        h2, h3, p {
-            color: white;
-            font-weight: bold;
-        }
-        .price {
-            color: white;
-            font-size: 1.2em; /* Adjust font size as needed */
+            background: #111;
         }
     </style>
 </head>
@@ -64,140 +85,170 @@
                 <li><a href="../avtcnx/petitDej.html">Petit Déjeuner</a></li>
                 <li><a href="../avtcnx/dejeuner.html">Déjeuner</a></li>
                 <li><a href="../avtcnx/dessert.html">Desserts</a></li>
-                <li><a href="#">Boissons & Cocktails</a></li>
+                <li><a href="boisson.html">Boissons</a></li>
             </ul>
         </nav>
         <div class="nav-right">
-            <a href="../avtcnx/conexion.html"><img src="../asset/user.png" alt="Authentification" class="icon"></a>
-            <a href="../avtcnx/inscription.html"><img src="../asset/note.png" alt="Inscription" class="icon"></a>
-            <a href="../avtcnx/panier.html"><img src="../asset/panier.png" alt="Panier" class="icon"></a>
+            <a href="../avtcnx/conexion.html"><img src="../asset/user.png" alt="Authentification de l'utilisateur" class="icon"></a>
+            <a href="../avtcnx/inscription.html"><img src="../asset/note.png" alt="Inscription à notre service" class="icon"></a>
+            <a href="../avtcnx/panier.html"><img src="../asset/panier.png" alt="Panier d'achats" class="icon"></a>
         </div>
     </header>
     
-    <main>
+    <main class="container">
         <h2>Découvrez nos boissons et cocktails</h2>
-        <section class="container">
-            <h3>Un voyage sensoriel à travers des saveurs uniques et rafraîchissantes.</h3>
-            <img src="../asset/téléchargement.jpeg" alt="panier" style="width: 300px; height: auto;">
-            <p class="description" style="display: none;">Découvrez notre sélection de boissons rafraîchissantes et savoureuses, soigneusement élaborées pour satisfaire toutes vos envies.</p>
-            <button class="discover" onclick="toggleDescription()">Découvrir</button>
-        </section>
+        <p>STUD BOISSON – Softs, Champagne, Vins, sodas 
 
-        <section>
-            <h3>Voici Nos Boissons Chaudes</h3>
-            <div class="drink-section">
-                <div class="a">
-                    <img src="../asset/café1.png" alt="Café" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Café Prix<span class="price">: 2.50€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Café', '../asset/café1.jpg', 2.50)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
-                <div class="b">
-                    <img src="../asset/the.png" alt="Thé" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Thé Prix <span class="price">: 2.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
+            Que ce soit pour le petit-déjeuner en entreprise, en réunion autour de plateaux-repas ou d'un buffet à partager ou encore lors d'un événement cocktails, retrouvez une sélection de boissons (vins, bières, champagnes et autres softs) pour accompagner vos événements.
+            </p>
+        <div class="category-buttons">
+            <button class="category-button" onclick="showCategory('Boissons chaudes')">Boissons chaudes</button>
+            <button class="category-button" onclick="showCategory('Boissons Soft')">Boissons Soft</button>
+            <button class="category-button" onclick="showCategory('Vins')">Vins</button>
+            <button class="category-button" onclick="showCategory('Champagnes & pétillants')">Champagnes & pétillants</button>
+            <button class="category-button" onclick="showCategory('cocktail')">Cocktails</button>
+            <button class="category-button" onclick="showCategory('smoothie')">Smoothies</button>
+        </div>
+        
+        <section id="Boissons chaudes" class="drink-section">
+            <h3>Boissons chaudes</h3>
+            <P>Prenez un moment de réconfort avec notre sélection de boissons chaudes soigneusement préparées. Que vous soyez amateur de café corsé, de thé délicat ou de chocolat onctueux, Stud Saveur a de quoi ravir vos papilles :
+
+                Café Classique : Un expresso intense ou un allongé tout en douceur, fraîchement moulu pour un goût authentique.
+                
+                Cappuccino / Latte : Une alliance parfaite entre café et mousse de lait pour une pause gourmande.
+                
+                Thé & Infusions : Un large choix de thés noirs, verts ou infusions aux notes fruitées et apaisantes.
+                
+                Chocolat Chaud Maison : Crémeux, réconfortant, et légèrement sucré, idéal pour les petites envies sucrées.
+                
+                À savourer sur place ou à emporter, toujours avec le sourire !</P>
+            <div class="card">
+                <img src="../asset/z10-instant-cafe_500_500-17444.jpg" alt="Boissons chaudes" style="width: 100%; height: auto;">
+                <p>Instant Café Prix </p>
+                <p>sans réemploi</p>
+                <span class="price">Prix: 21,89 € T.T.C   19,90 € H.T.€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Café', '../asset/z10-instant-cafe_500_500-17444.jpg', Prix: 21,89 € T.T.C   19,90 € H.T.€)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+            <div class="card">
+                <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
+                <p>Thé Prix <span class="price">: 2.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
             </div>
         </section>
 
-        <section>
-            <h3>Voici Nos Boissons Froides</h3>
-            <div class="drink-section">
-                <div class="c">
-                    <img src="../asset/or.png" alt="Jus d'orange" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Jus d'orange Prix <span class="price">: 3.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Jus d\'orange', '../asset/or.png', 3.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
-                <div class="d">
-                    <img src="../asset/sod.png" alt="Soda" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Soda Prix <span class="price">: 1.50€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Soda', '../asset/sod.png', 1.50)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
-                <div class="e">
-                    <img src="../asset/eau.jpeg" alt="Eau minérale" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Eau minérale Prix <span class="price">: 1.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Eau minérale', '../asset/eau.jpeg', 1.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
+        <section id="the" class="drink-section">
+            <h3>Boissons Soft</h3>
+            <div class="card">
+                <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
+                <p>Thé Prix <span class="price">: 2.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+            <div class="card">
+                <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
+                <p>Thé Prix <span class="price">: 2.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
             </div>
         </section>
 
-        <section>
-            <h3>Voici Nos Boissons Alcoolisé</h3>
-            <div class="drink-section">
-                <div class="f">
-                    <img src="../asset/vr.png" alt="Vin rouge" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Vin rouge Prix <span class="price">: 5.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Vin rouge', '../asset/vr.png', 5.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
-                <div class="i">
-                    <img src="../asset/vb.png" alt="Vin blanc" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Vin blanc Prix <span class="price">: 5.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Vin blanc', '../asset/vb.png', 5.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
-                <div class="g">
-                    <img src="../asset/ch.png" alt="Champagne" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Champagne Prix <span class="price">: 10.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Champagne', '../asset/ch.png', 10.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
+        <section id="Vins" class="drink-section">
+            <h3>Vins</h3>
+            <div class="card">
+                <img src="../asset/vb.png" alt="Vins" style="width: 100%; height: auto;">
+                <p>Jus d'orange Prix <span class="price">: 3.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Vin Blanc', '../asset/vb.png', 3.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+            <div class="card">
+                <img src="../asset/vr.png" alt="Vins" style="width: 100%; height: auto;">
+                <p>Jus d'orange Prix <span class="price">: 3.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Vin rouge', '../asset/vr.png', 3.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
             </div>
         </section>
 
-        <section>
-            <h3>Voici Nos Cocktails</h3>
-            <div class="drink-section">
-                <div class="k">
-                    <img src="../asset/cf .png" alt="Cocktail de fruits" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Cocktail de fruits Prix <span class="price">: 4.00€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Cocktail de fruits', '../asset/cf .png', 4.00)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
-                <div class="l">
-                    <img src="../asset/sm .png" alt="Smoothie" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p>Smoothie Prix <span class="price">: 4.50€</span></p>
-                    <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;" oninput="this.value = Math.max(1, this.value);">
-                    <button class="add-button" onclick="addToCart('Smoothie', '../asset/sm .png', 4.50)">
-                        <img src="../asset/panier.png" alt="Panier" style="width: 20px; height: 20px; vertical-align: middle;"> Ajouter au Panier
-                    </button>
-                </div>
+        <section id="soda" class="drink-section">
+            <h3>Champagnes & pétillants</h3>
+            <div class="card">
+                <img src="../asset/sod.png" alt="Soda" style="width: 100%; height: auto;">
+                <p>Soda Prix <span class="price">: 1.50€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Soda', '../asset/sod.png', 1.50)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
             </div>
         </section>
 
+        <section id="vin" class="drink-section">
+            <h3>Vin</h3>
+            <div class="card">
+                <img src="../asset/vr.png" alt="Vin rouge" style="width: 100%; height: auto;">
+                <p>Vin rouge Prix <span class="price">: 5.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Vin rouge', '../asset/vr.png', 5.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+            <div class="card">
+                <img src="../asset/vb.png" alt="Vin blanc" style="width: 100%; height: auto;">
+                <p>Vin blanc Prix <span class="price">: 5.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Vin blanc', '../asset/vb.png', 5.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+        </section>
+
+        <section id="cocktail" class="drink-section">
+            <h3>Cocktails</h3>
+            <div class="card">
+                <img src="../asset/ch.png" alt="Champagne" style="width: 100%; height: auto;">
+                <p>Champagne Prix <span class="price">: 10.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Champagne', '../asset/ch.png', 10.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+            <div class="card">
+                <img src="../asset/cf.png" alt="Cocktail de fruits" style="width: 100%; height: auto;">
+                <p>Cocktail de fruits Prix <span class="price">: 4.00€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Cocktail de fruits', '../asset/cf.png', 4.00)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+        </section>
+
+        <section id="smoothie" class="drink-section">
+            <h3>Smoothies</h3>
+            <div class="card">
+                <img src="../asset/sm.png" alt="Smoothie" style="width: 100%; height: auto;">
+                <p>Smoothie Prix <span class="price">: 4.50€</span></p>
+                <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
+                <button class="add-button" onclick="addToCart('Smoothie', '../asset/sm.png', 4.50)">Ajouter au Panier</button>
+                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+            </div>
+        </section>
     </main>
     
     <footer>
-        <p>Footer</p>
+        <p>Contactez-nous: info@studsaveur.com | Suivez-nous sur les réseaux sociaux</p>
     </footer>
 
     <script>
-        function toggleDescription() {
-            const description = document.querySelector('.description');
-            description.style.display = description.style.display === 'none' ? 'block' : 'none';
+        function showCategory(category) {
+            const sections = document.querySelectorAll('.drink-section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide all sections
+            });
+            document.getElementById(category).style.display = 'flex'; // Show selected category
         }
+
         function addToCart(itemName, itemImage, itemPrice) {
             const quantityInput = event.target.previousElementSibling; // Get the quantity input
             const quantity = parseInt(quantityInput.value); // Get the quantity value
@@ -228,7 +279,5 @@
             alert(quantity + ' x ' + itemName + ' a été ajouté au panier avec succès!');
         }
     </script>
-    <script src="../js/boissons.js"></script>
-
 </body>
 </html>
