@@ -67,13 +67,16 @@
             color: #fff;
         }
         .price {
-            color: #333;
+            color: white;
             font-size: 1.2em;
         }
         footer {
             text-align: center;
             padding: 10px;
             background: #111;
+        }
+        .text-black {
+            color: black;
         }
     </style>
 </head>
@@ -96,11 +99,10 @@
     </header>
     
     <main class="container">
-        <h2>Découvrez nos boissons et cocktails</h2>
-        <p>STUD BOISSON – Softs, Champagne, Vins, sodas 
-
+        <h2 class="text-black"><strong>Découvrez nos boissons et cocktails</strong></h2>
+        <p class="text-black"><strong>STUD BOISSON – Softs, Champagne, Vins, sodas</strong> 
             Que ce soit pour le petit-déjeuner en entreprise, en réunion autour de plateaux-repas ou d'un buffet à partager ou encore lors d'un événement cocktails, retrouvez une sélection de boissons (vins, bières, champagnes et autres softs) pour accompagner vos événements.
-            </p>
+        </p>
         <div class="category-buttons">
             <button class="category-button" onclick="showCategory('Boissons chaudes')">Boissons chaudes</button>
             <button class="category-button" onclick="showCategory('Boissons Soft')">Boissons Soft</button>
@@ -111,113 +113,148 @@
         </div>
         
         <section id="Boissons chaudes" class="drink-section">
-            <h3>Boissons chaudes</h3>
-            <P>Prenez un moment de réconfort avec notre sélection de boissons chaudes soigneusement préparées. Que vous soyez amateur de café corsé, de thé délicat ou de chocolat onctueux, Stud Saveur a de quoi ravir vos papilles :
-
-                Café Classique : Un expresso intense ou un allongé tout en douceur, fraîchement moulu pour un goût authentique.
-                
-                Cappuccino / Latte : Une alliance parfaite entre café et mousse de lait pour une pause gourmande.
-                
-                Thé & Infusions : Un large choix de thés noirs, verts ou infusions aux notes fruitées et apaisantes.
-                
-                Chocolat Chaud Maison : Crémeux, réconfortant, et légèrement sucré, idéal pour les petites envies sucrées.
-                
-                À savourer sur place ou à emporter, toujours avec le sourire !</P>
+            <h3 class="text-black"><strong>Boissons chaudes</strong></h3>
+            <p class="text-black"><strong>Prenez un moment de réconfort avec notre sélection de boissons chaudes soigneusement préparées. Que vous soyez amateur de café corsé, de thé délicat ou de chocolat onctueux, Stud Saveur a de quoi ravir vos papilles :</strong></p>
             <div class="card">
                 <img src="../asset/z10-instant-cafe_500_500-17444.jpg" alt="Boissons chaudes" style="width: 100%; height: auto;">
-                <p>Instant Café Prix </p>
-                <p>sans réemploi</p>
-                <span class="price">Prix: 21,89 € T.T.C   19,90 € H.T.€</span></p>
+                <p class="text-black"><strong>Instant Café</strong></p>
+                <p class="text-black"><strong>sans réemploi</strong></p>
+                <span class="price"> <span class="text-black">Prix:21,89 € T.T.C</span> <span class="text-black">19,90 € H.T.</span></span>
+                <p class="text-black"><strong>Pour 6 personnes. Thermos de café 100% Arabica.</strong></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-                <button class="add-button" onclick="addToCart('Café', '../asset/z10-instant-cafe_500_500-17444.jpg', Prix: 21,89 € T.T.C   19,90 € H.T.€)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="add-button" onclick="addToCart('Café', '../asset/z10-instant_cafe_500_500-17444.jpg', 'Prix: 21,89 € T.T.C   19,90 € H.T.€')">Ajouter au Panier</button>
+                <button class="detail-button" onclick="showDetails('Café')">Détails</button>
+                <div class="details-section" id="details-Café" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Café, Eau</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
+                <div class="details-section" id="details-Café" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Café, Eau</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h sauf les weekends</p>
+                </div>
             </div>
             <div class="card">
                 <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
-                <p>Thé Prix <span class="price">: 2.00€</span></p>
+                <p class="text-black"><strong>Thé Prix</strong> <span class="price">: <span class="text-black">2.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
-                <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', '2.00')">Ajouter au Panier</button>
+                <button class="detail-button" onclick="showDetails('Thé')">Détails</button>
+                <div class="details-section" id="details-Thé" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Thé, Eau</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
+                <div class="details-section" id="details-Thé" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Thé, Eau</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
         </section>
 
         <section id="the" class="drink-section">
-            <h3>Boissons Soft</h3>
+            <h3 class="text-black"><strong>Boissons Soft</strong></h3>
             <div class="card">
                 <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
-                <p>Thé Prix <span class="price">: 2.00€</span></p>
+                <p class="text-black"><strong>Thé Prix</strong> <span class="price">: <span class="text-black">2.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Thé')">Détails</button>
+                <div class="details-section" id="details-Thé" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Thé, Eau</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
             <div class="card">
                 <img src="../asset/the.png" alt="Thé" style="width: 100%; height: auto;">
-                <p>Thé Prix <span class="price">: 2.00€</span></p>
+                <p class="text-black"><strong>Thé Prix</strong> <span class="price">: <span class="text-black">2.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Thé', '../asset/the.png', 2.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Vin Blanc')">Détails</button>
+                <div class="details-section" id="details-Vin Blanc" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Vin Blanc</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
         </section>
 
         <section id="Vins" class="drink-section">
-            <h3>Vins</h3>
+            <h3 class="text-black"><strong>Vins</strong></h3>
             <div class="card">
                 <img src="../asset/vb.png" alt="Vins" style="width: 100%; height: auto;">
-                <p>Jus d'orange Prix <span class="price">: 3.00€</span></p>
+                <p class="text-black"><strong>Jus d'orange Prix</strong> <span class="price">: <span class="text-black">3.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Vin Blanc', '../asset/vb.png', 3.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Vin rouge')">Détails</button>
+                <div class="details-section" id="details-Vin rouge" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Vin Rouge</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
             <div class="card">
                 <img src="../asset/vr.png" alt="Vins" style="width: 100%; height: auto;">
-                <p>Jus d'orange Prix <span class="price">: 3.00€</span></p>
+                <p class="text-black"><strong>Jus d'orange Prix</strong> <span class="price">: <span class="text-black">3.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Vin rouge', '../asset/vr.png', 3.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Soda')">Détails</button>
+                <div class="details-section" id="details-Soda" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Soda</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
         </section>
 
         <section id="soda" class="drink-section">
-            <h3>Champagnes & pétillants</h3>
+            <h3 class="text-black"><strong>Champagnes & pétillants</strong></h3>
             <div class="card">
                 <img src="../asset/sod.png" alt="Soda" style="width: 100%; height: auto;">
-                <p>Soda Prix <span class="price">: 1.50€</span></p>
+                <p class="text-black"><strong>Soda Prix</strong> <span class="price">: <span class="text-black">1.50€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Soda', '../asset/sod.png', 1.50)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Champagne')">Détails</button>
+                <div class="details-section" id="details-Champagne" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Champagne</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
         </section>
 
         <section id="vin" class="drink-section">
-            <h3>Vin</h3>
+            <h3 class="text-black"><strong>Vin</strong></h3>
             <div class="card">
                 <img src="../asset/vr.png" alt="Vin rouge" style="width: 100%; height: auto;">
-                <p>Vin rouge Prix <span class="price">: 5.00€</span></p>
+                <p class="text-black"><strong>Vin rouge Prix</strong> <span class="price">: <span class="text-black">5.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Vin rouge', '../asset/vr.png', 5.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Cocktail de fruits')">Détails</button>
+                <div class="details-section" id="details-Cocktail de fruits" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Cocktail de fruits</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
             <div class="card">
                 <img src="../asset/vb.png" alt="Vin blanc" style="width: 100%; height: auto;">
-                <p>Vin blanc Prix <span class="price">: 5.00€</span></p>
+                <p class="text-black"><strong>Vin blanc Prix</strong> <span class="price">: <span class="text-black">5.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Vin blanc', '../asset/vb.png', 5.00)">Ajouter au Panier</button>
-                <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
+                <button class="detail-button" onclick="showDetails('Smoothie')">Détails</button>
+                <div class="details-section" id="details-Smoothie" style="display: none;">
+                    <p class="text-black"><strong>Ingrédients:</strong> Smoothie</p>
+                    <p class="text-black"><strong>Modalités de livraison:</strong> Livraison sous 24h</p>
+                </div>
             </div>
         </section>
 
         <section id="cocktail" class="drink-section">
-            <h3>Cocktails</h3>
+            <h3 class="text-black"><strong>Cocktails</strong></h3>
             <div class="card">
                 <img src="../asset/ch.png" alt="Champagne" style="width: 100%; height: auto;">
-                <p>Champagne Prix <span class="price">: 10.00€</span></p>
+                <p class="text-black"><strong>Champagne Prix</strong> <span class="price">: <span class="text-black">10.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Champagne', '../asset/ch.png', 10.00)">Ajouter au Panier</button>
                 <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
             </div>
             <div class="card">
                 <img src="../asset/cf.png" alt="Cocktail de fruits" style="width: 100%; height: auto;">
-                <p>Cocktail de fruits Prix <span class="price">: 4.00€</span></p>
+                <p class="text-black"><strong>Cocktail de fruits Prix</strong> <span class="price">: <span class="text-black">4.00€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Cocktail de fruits', '../asset/cf.png', 4.00)">Ajouter au Panier</button>
                 <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
@@ -225,10 +262,10 @@
         </section>
 
         <section id="smoothie" class="drink-section">
-            <h3>Smoothies</h3>
+            <h3 class="text-black"><strong>Smoothies</strong></h3>
             <div class="card">
                 <img src="../asset/sm.png" alt="Smoothie" style="width: 100%; height: auto;">
-                <p>Smoothie Prix <span class="price">: 4.50€</span></p>
+                <p class="text-black"><strong>Smoothie Prix</strong> <span class="price">: <span class="text-black">4.50€</span></span></p>
                 <input type="number" min="1" value="1" class="quantity-input" style="width: 50px;">
                 <button class="add-button" onclick="addToCart('Smoothie', '../asset/sm.png', 4.50)">Ajouter au Panier</button>
                 <button class="detail-button" onclick="window.location.href='details/boissonDetails.html'">Détails</button>
@@ -237,7 +274,7 @@
     </main>
     
     <footer>
-        <p>Contactez-nous: info@studsaveur.com | Suivez-nous sur les réseaux sociaux</p>
+        <p class="text-black">Contactez-nous: info@studsaveur.com | Suivez-nous sur les réseaux sociaux</p>
     </footer>
 
     <script>
@@ -247,6 +284,15 @@
                 section.style.display = 'none'; // Hide all sections
             });
             document.getElementById(category).style.display = 'flex'; // Show selected category
+        }
+
+        function showDetails(itemName) {
+            const detailsSection = document.getElementById('details-' + itemName);
+            if (detailsSection.style.display === 'none') {
+                detailsSection.style.display = 'block';
+            } else {
+                detailsSection.style.display = 'none';
+            }
         }
 
         function addToCart(itemName, itemImage, itemPrice) {
